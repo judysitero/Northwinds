@@ -55,13 +55,24 @@ FROM employees
 WHERE Title LIKE '%Manager%' ;
 
 -- Q13.List the distinct job titles in employees.
+SELECT Title
+FROM employees;
 
-
--- Q14. What employees have a salary that is between $200 0 and $2500?
-
+-- Q14.What employees have a salary that is between $200 0 and $2500?
+SELECT FirstName, LastName, Title, Salary
+FROM employees
+WHERE Salary BETWEEN 2000 AND 2500;
 
 -- Q15.List all the information about all of Northwind's suppliers.
+SELECT *
+FROM suppliers;
 
 
--- Q16.Examine the Products table. How do you know what supplier supplies each product? Write a query to list all the items that "Tokyo Traders"
--- supplies to Northwind
+-- Q16.Examine the Products table. How do you know what supplier supplies each product? Write a query to list all the items that "Tokyo Traders" supplies to Northwind
+SELECT SupplierID
+FROM suppliers
+WHERE CompanyNamme = 'Tokyo Traders'; 
+
+SELECT ProductName, UnitPrice, UnitsInStock
+FROM products
+WHERE SupplierID = 4;
